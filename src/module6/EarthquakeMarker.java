@@ -58,9 +58,15 @@ public abstract class EarthquakeMarker extends CommonMarker implements Comparabl
 	// TODO: Add the method:
 	// public int compareTo(EarthquakeMarker marker)
 	@Override
-	public int compareTo(EarthquakeMarker earthquakeMarker) {
+	public int compareTo(EarthquakeMarker m) {
 		// TODO Auto-generated method stub
-		return Float.compare(getMagnitude(), earthquakeMarker.getMagnitude());
+		if(this.getMagnitude()< m.getMagnitude()) {
+			return -1;
+		}
+		else if(this.getMagnitude()> m.getMagnitude()) {
+			return 1;
+		}
+		else return 0;
 	}
 	
 	// calls abstract method drawEarthquake and then checks age and draws X if needed
